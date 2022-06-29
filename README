@@ -4,3 +4,8 @@ Multi-Document Answering
 Based on David Shapiro
 https://github.com/daveshap/MultiDocumentAnswering
 https://www.youtube.com/watch?v=es8e4SEuvV0
+
+The OpenAI key is used on a text file for simplicity. Later it can be put into a Environment Variable inside a Docker Container.
+
+Embedding:
+def gpt3_embedding(content, engine='text-similarity-ada-001')

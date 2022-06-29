@@ -10,8 +10,9 @@ def open_file(filepath):
 
 openai.api_key = open_file('openaiapikey.txt')
 
-
-def gpt3_embedding(content, engine='text-similarity-ada-001'):
+# "text-similarity-davinci-001"
+# text-similarity-ada-001
+def gpt3_embedding(content, engine='text-similarity-davinci-001'):
     response = openai.Embedding.create(input=content,engine=engine)
     vector = response['data'][0]['embedding']  # this is a normal list
     return vector
@@ -27,4 +28,4 @@ if __name__ == '__main__':
         print(info, '\n\n\n')
         result.append(info)
     with open('index.json', 'w') as outfile:
-        json.dump(result, outfile, indent=2)
+        json.dump(result, outfile, indent=6)

@@ -13,8 +13,9 @@ def open_file(filepath):
 
 openai.api_key = open_file('openaiapikey.txt')
 
-
-def gpt3_embedding(content, engine='text-similarity-ada-001'):
+# "text-similarity-davinci-001"
+# text-similarity-ada-001
+def gpt3_embedding(content, engine='text-similarity-davinci-001'):
     content = content.encode(encoding='ASCII',errors='ignore').decode()
     response = openai.Embedding.create(input=content,engine=engine)
     vector = response['data'][0]['embedding']  # this is a normal list
